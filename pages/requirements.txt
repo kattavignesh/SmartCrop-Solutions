@@ -8,3 +8,4 @@ python-dotenv
 gpt4all
 streamlit-js-eval
 requests
+scikit-learn
