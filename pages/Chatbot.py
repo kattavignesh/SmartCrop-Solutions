@@ -5,14 +5,14 @@ from streamlit_js_eval import get_geolocation
 import os
 import requests
 
-# Load API keys
+# Load API keys from .env
 load_dotenv()
 OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
 
 st.title("🤖 AI Farming Chatbot")
 
-# Load local LLaMA model
-model_path = r"C:/Users/KATTA VIGNESH/AppData/Local/nomic.ai/GPT4All/Llama-3.2-3B-Instruct-Q4_0.gguf"
+# Load local LLaMA model (relative path)
+model_path = "models/Llama-3.2-3B-Instruct-Q4_0.gguf"  # place the model in 'models/' folder
 st.write("⏳ Loading model... please wait 1–3 minutes.")
 model = GPT4All(model_path, allow_download=False)
 st.success("✅ Model loaded!")
@@ -40,7 +40,6 @@ def get_weather_by_location(lat, lon):
 if loc and st.button("🌤 Get My Weather"):
     weather = get_weather_by_location(latitude, longitude)
     st.success(weather)
-
 
 # 💬 Chat input
 user_input = st.text_input("💬 Ask me anything about farming:")

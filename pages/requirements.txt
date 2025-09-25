@@ -1,0 +1,10 @@
+streamlit
+tensorflow
+h5py
+numpy
+Pillow
+opencv-python
+python-dotenv
+gpt4all
+streamlit-js-eval
+requests
